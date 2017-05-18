@@ -1,5 +1,5 @@
 {
-    "homepage": "https://github,com/phpredis/phpredis/",
+    "homepage": "https://pecl.php.net/package/redis",
     "version": "3.1.2",
     "license": "https://github.com/phpredis/phpredis/blob/master/LICENSE",
     "architecture": {
@@ -22,7 +22,8 @@
         echo \"extension=$dir\\php_redis.dll\" | sc \"$phpconfd\\redis.ini\"
     } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_redis.dll manually!\" }",
     "checkver": {
-        "github": "https://github.com/phpredis/phpredis"
+        "url": "https://pecl.php.net/package/redis",
+        "re": "redis/([\\d.]+)/windows"
     },
     "autoupdate": {
         "architecture": {
