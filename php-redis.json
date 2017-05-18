@@ -1,16 +1,15 @@
 {
     "homepage": "https://github,com/phpredis/phpredis/",
-    "version": "3.1.1",
+    "version": "3.1.2",
     "license": "https://github.com/phpredis/phpredis/blob/master/LICENSE",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/redis/3.1.1/php_redis-3.1.1-7.1-ts-vc14-x64.zip",
-            "hash": "b4386c7c4660694685a484f2a2d99f8fb466b0ad47c2bdf4781f59ef65d90e47"
+            "url": "http://windows.php.net/downloads/pecl/releases/redis/3.1.2/php_redis-3.1.2-7.1-ts-vc14-x64.zip",
+            "hash": "ab2e47f099b4e71f5e443ca4aede03223186151985cb174f3b6ee41572ba1a57"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/redis/3.1.1/php_redis-3.1.1-7.1-ts-vc14-x86.zip",
-            "hash": "e6c13be1447d685ca5a48b8b601e9ec942a26e4a408e584dece1f233a6b5e1ae"
-
+            "url": "http://windows.php.net/downloads/pecl/releases/redis/3.1.2/php_redis-3.1.2-7.1-ts-vc14-x86.zip",
+            "hash": "8f6ec404b4f34721df6dfeb20527a6d5abd8bd29ea51b5b8f4de2f9b553145b4"
         }
     },
     "depends": [
