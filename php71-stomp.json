@@ -15,7 +15,7 @@
   "depends": [
     "php"
   ],
-  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\stomp.ini\"; echo \"extension=$dir\\php_stomp.dll\" | sc \"$phpconfd\\stomp.ini\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_stomp.dll manually!\" }",
+  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\stomp.ini\"; echo \"extension=$dir\\php_stomp.dll\" | sc \"$phpconfd\\stomp.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\stomp.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_stomp.dll manually!\" }",
   "checkver": "stomp/([\\d.]+)/windows",
   "autoupdate": {
     "architecture": {
@@ -26,5 +26,8 @@
         "url": "http://windows.php.net/downloads/pecl/releases/stomp/$version/php_stomp-$version-7.1-ts-vc14-x86.zip"
       }
     }
+  },
+  "uninstaller": {
+    "file": "uninstall.ps1"
   }
 }

@@ -15,7 +15,7 @@
   "depends": [
     "php"
   ],
-  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\xdiff.ini\"; echo \"extension=$dir\\php_xdiff.dll\" | sc \"$phpconfd\\xdiff.ini\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_xdiff.dll manually!\" }",
+  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\xdiff.ini\"; echo \"extension=$dir\\php_xdiff.dll\" | sc \"$phpconfd\\xdiff.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\xdiff.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_xdiff.dll manually!\" }",
   "checkver": "xdiff/([\\d.]+)/windows",
   "autoupdate": {
     "architecture": {
@@ -26,5 +26,8 @@
         "url": "http://windows.php.net/downloads/pecl/releases/xdiff/$version/php_xdiff-$version-7.1-ts-vc14-x86.zip"
       }
     }
+  },
+  "uninstaller": {
+    "file": "uninstall.ps1"
   }
 }

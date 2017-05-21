@@ -15,7 +15,7 @@
   "depends": [
     "php"
   ],
-  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\bitset.ini\"; echo \"extension=$dir\\php_bitset.dll\" | sc \"$phpconfd\\bitset.ini\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_bitset.dll manually!\" }",
+  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\bitset.ini\"; echo \"extension=$dir\\php_bitset.dll\" | sc \"$phpconfd\\bitset.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\bitset.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_bitset.dll manually!\" }",
   "checkver": "bitset/([\\d.]+)/windows",
   "autoupdate": {
     "architecture": {
@@ -26,5 +26,8 @@
         "url": "http://windows.php.net/downloads/pecl/releases/bitset/$version/php_bitset-$version-7.1-ts-vc14-x86.zip"
       }
     }
+  },
+  "uninstaller": {
+    "file": "uninstall.ps1"
   }
 }

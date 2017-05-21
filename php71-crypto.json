@@ -15,7 +15,7 @@
   "depends": [
     "php"
   ],
-  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\crypto.ini\"; echo \"extension=$dir\\php_crypto.dll\" | sc \"$phpconfd\\crypto.ini\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_crypto.dll manually!\" }",
+  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\crypto.ini\"; echo \"extension=$dir\\php_crypto.dll\" | sc \"$phpconfd\\crypto.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\crypto.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_crypto.dll manually!\" }",
   "checkver": "crypto/([\\d.]+)/windows",
   "autoupdate": {
     "architecture": {
@@ -26,5 +26,8 @@
         "url": "http://windows.php.net/downloads/pecl/releases/crypto/$version/php_crypto-$version-7.1-ts-vc14-x86.zip"
       }
     }
+  },
+  "uninstaller": {
+    "file": "uninstall.ps1"
   }
 }

@@ -15,7 +15,7 @@
   "depends": [
     "php"
   ],
-  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\zip.ini\"; echo \"extension=$dir\\php_zip.dll\" | sc \"$phpconfd\\zip.ini\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_zip.dll manually!\" }",
+  "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\zip.ini\"; echo \"extension=$dir\\php_zip.dll\" | sc \"$phpconfd\\zip.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\zip.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_zip.dll manually!\" }",
   "checkver": "zip/([\\d.]+)/windows",
   "autoupdate": {
     "architecture": {
@@ -26,5 +26,8 @@
         "url": "http://windows.php.net/downloads/pecl/releases/zip/$version/php_zip-$version-7.1-ts-vc14-x86.zip"
       }
     }
+  },
+  "uninstaller": {
+    "file": "uninstall.ps1"
   }
 }
