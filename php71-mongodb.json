@@ -1,15 +1,15 @@
 {
     "homepage": "https://pecl.php.net/package/mongodb",
-    "version": "1.2.9",
+    "version": "1.2.10",
     "license": "http://www.php.net/license/3_01.txt",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/mongodb/1.2.9/php_mongodb-1.2.9-7.1-ts-vc14-x64.zip",
-            "hash": "a1e09d8b50b5c026fdc71467c4dfa7b97c2ce9edcd7d19917fd53c1a68064dd5"
+            "url": "http://windows.php.net/downloads/pecl/releases/mongodb/1.2.10/php_mongodb-1.2.10-7.1-ts-vc14-x64.zip",
+            "hash": "6cd3e82c266026cf088af1b63950ab869d4c05cec2e031ec9bd84afb6c505ce6"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/mongodb/1.2.9/php_mongodb-1.2.9-7.1-ts-vc14-x86.zip",
-            "hash": "6ad05920c57cba1e41d0f703a609e69d82311c2f82b97c6bb4b07dc3063bf3cb"
+            "url": "http://windows.php.net/downloads/pecl/releases/mongodb/1.2.10/php_mongodb-1.2.10-7.1-ts-vc14-x86.zip",
+            "hash": "3c9d16fbbc02f1bb6306ac614862ccd5a2c6e8f0416c179c928f6f7d656da3eb"
         }
     },
     "depends": [

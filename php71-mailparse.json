@@ -5,11 +5,11 @@
     "architecture": {
         "64bit": {
             "url": "http://windows.php.net/downloads/pecl/releases/mailparse/3.0.2/php_mailparse-3.0.2-7.1-ts-vc14-x64.zip",
-            "hash": "143266d822863006e807ca4602f95b8cbb39d63e0fe80c30a180c62f0cf69f32"
+            "hash": "1b74308181167a5ae0795824e4ef8fd77c09a81662caaebba3779dea86f328e9"
         },
         "32bit": {
             "url": "http://windows.php.net/downloads/pecl/releases/mailparse/3.0.2/php_mailparse-3.0.2-7.1-ts-vc14-x86.zip",
-            "hash": "011ec947bd9d8597f9e76084e7dca206f0461c0c1956781387ed34bc440d2988"
+            "hash": "c17e83ee3cfc81530c5796c4308cb0e5d5353bd887a5277c493f55cab89a5c19"
         }
     },
     "depends": [

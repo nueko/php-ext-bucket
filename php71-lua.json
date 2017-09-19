@@ -1,15 +1,15 @@
 {
     "homepage": "https://pecl.php.net/package/lua",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "license": "http://www.php.net/license/3_01.txt",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/lua/2.0.3/php_lua-2.0.3-7.1-ts-vc14-x64.zip",
-            "hash": "24eddaede17ce47cb71f6ae2d7c58664108c96a7103f743e991cb6eec370a6b2"
+            "url": "http://windows.php.net/downloads/pecl/releases/lua/2.0.4/php_lua-2.0.4-7.1-ts-vc14-x64.zip",
+            "hash": "068c8c547fc8bba3defa9164d4a42715c188f400fa937745ecb3fbba8a5e244f"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/lua/2.0.3/php_lua-2.0.3-7.1-ts-vc14-x86.zip",
-            "hash": "c045f7740463846c07f478d6a24ce91f9cdc778ffd6d581eb3a0e27ff9645622"
+            "url": "http://windows.php.net/downloads/pecl/releases/lua/2.0.4/php_lua-2.0.4-7.1-ts-vc14-x86.zip",
+            "hash": "5db0a75671f6002465095deebaba7b3348863e54b87cbd7a6cb362230b37a76b"
         }
     },
     "depends": [

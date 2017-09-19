@@ -1,15 +1,15 @@
 {
     "homepage": "https://pecl.php.net/package/taint",
-    "version": "2.0.2",
+    "version": "2.0.4",
     "license": "http://www.php.net/license/3_01.txt",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/taint/2.0.2/php_taint-2.0.2-7.1-ts-vc14-x64.zip",
-            "hash": "48df5126611229e2f9383c0b834b966046f10bb4bf972caea45765d64cd6c683"
+            "url": "http://windows.php.net/downloads/pecl/releases/taint/2.0.4/php_taint-2.0.4-7.1-ts-vc14-x64.zip",
+            "hash": "d79febbdfa5bab562b0a38563c3117d0c95180919fd59976f5b2b40d86d4ab8e"
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/taint/2.0.2/php_taint-2.0.2-7.1-ts-vc14-x86.zip",
-            "hash": "cdf9838426090ff1d6114086bfb885ca95a0ff4cad12edbf11a81d6447c42352"
+            "url": "http://windows.php.net/downloads/pecl/releases/taint/2.0.4/php_taint-2.0.4-7.1-ts-vc14-x86.zip",
+            "hash": "928baa8fb675b9ea7c61f119497195c1d984c9e18a6cab40295ad56de39d83e2"
         }
     },
     "depends": [
