@@ -16,7 +16,7 @@
         "php"
     ],
     "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\weakref.ini\"; echo \"extension=$dir\\php_weakref.dll\" | sc \"$phpconfd\\weakref.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\weakref.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_weakref.dll manually!\" }",
-    "checkver": "weakref/([\\d.]+)/windows",
+    "checkver": "(?i)weakref/([\\d.]+)/windows",
     "autoupdate": {
         "architecture": {
             "64bit": {
