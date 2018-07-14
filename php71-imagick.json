@@ -4,18 +4,43 @@
     "license": "http://www.php.net/license/3_01.txt",
     "architecture": {
         "64bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/imagick/3.4.3/php_imagick-3.4.3-7.1-ts-vc14-x64.zip",
-            "hash": "35ee1bba25f2901affa24a22e60abcaae466327fd7f2c00e32ddeeec1a5910a4"
+            "url": [
+                "http://windows.php.net/downloads/pecl/releases/imagick/3.4.3/php_imagick-3.4.3-7.1-ts-vc14-x64.zip",
+                "http://windows.php.net/downloads/pecl/deps/ImageMagick-6.9.3-7-vc14-x64.zip"
+            ],
+            "hash": [
+                "35ee1bba25f2901affa24a22e60abcaae466327fd7f2c00e32ddeeec1a5910a4",
+                "25f115a5aec336d3039add9b0819d459787763ce86e0dd4804ac1bddee431f10"
+            ]
         },
         "32bit": {
-            "url": "http://windows.php.net/downloads/pecl/releases/imagick/3.4.3/php_imagick-3.4.3-7.1-ts-vc14-x86.zip",
-            "hash": "306e12c77dd9bf71b198f252d6c52914aa055a13d7a22e76567e9e4bd56373f6"
+            "url": [
+                "http://windows.php.net/downloads/pecl/releases/imagick/3.4.3/php_imagick-3.4.3-7.1-ts-vc14-x86.zip",
+                "http://windows.php.net/downloads/pecl/deps/ImageMagick-6.9.3-7-vc14-x86.zip"
+            ],
+            "hash": [
+                "306e12c77dd9bf71b198f252d6c52914aa055a13d7a22e76567e9e4bd56373f6",
+                "8d46ee896c2d13a4829dcfff5a8da9ac6bdd55c4da4d039ac726a0e211f46a16"
+            ]
         }
     },
     "depends": [
         "php"
     ],
-    "post_install": "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"; if((test-path $phpconfd)) { echo \"Enabling extension $(Convert-Path $phpconfd)\\imagick.ini\"; echo \"extension=$dir\\php_imagick.dll\" | sc \"$phpconfd\\imagick.ini\"; echo \"Remove-Item '$(Convert-Path $phpconfd)\\imagick.ini'\" | sc \"$dir\\uninstall.ps1\" } else { write-host -f yellow \"PHP was not installed through scoop, you have to activate php_imagick.dll manually!\" }",
+    "post_install": "
+    $phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\";
+    if((test-path $phpconfd)) {
+      echo \"Enabling extension $(Convert-Path $phpconfd)\\imagick.ini\";
+      echo \"extension=$dir\\php_imagick.dll\" | sc \"$phpconfd\\imagick.ini\";
+      echo \"Remove-Item '$(Convert-Path $phpconfd)\\imagick.ini'\" | sc \"$dir\\uninstall.ps1\"
+    } else {
+      write-host -f yellow \"PHP was not installed through scoop, you have to activate php_imagick.dll manually!\"
+    }
+
+    Write-Host \"Remove .exe files to prevent confusion with imagemagick\"
+    Remove-Item $dir\\bin\\*.exe
+  ",
+    "env_add_path": "bin",
     "checkver": "imagick/([\\d.]+)/windows",
     "autoupdate": {
         "architecture": {
